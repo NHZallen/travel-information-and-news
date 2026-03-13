@@ -133,7 +133,7 @@ def search_browser(query, urls=None):
         subprocess.run(["pgrep", "-f", "Xvfb :99"], capture_output=True, check=True)
     except subprocess.CalledProcessError:
         subprocess.Popen(
-            ["Xvfb", ":99", "-screen", "0", "1280x720x24"],
+            ["Xvfb", ":99", "-screen", "0", "1200x720x24"],
             stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
         )
         import time
@@ -324,6 +324,7 @@ def main():
     parser.add_argument("--output", help="Output file path (default: stdout)")
     parser.add_argument("--use_brave", action="store_true", help="Enable Brave Search fallback")
     parser.add_argument("--use_browser", action="store_true", help="Enable browser scraping")
+    parser.add_argument("--no_reviews", action="store_true", help="Disable review aggregation (default: reviews enabled)")
     parser.add_argument("--language", help="Output language (default: auto-detect from query)")
 
     args = parser.parse_args()

@@ -31,7 +31,7 @@ python scripts/search.py --query "Bali hotel reviews" --format docx --output res
 **Brave Search:** Set `BRAVE_API_KEY` env var.
 
 **Browser suite (三件套):** Requires three components working together:
-- `Xvfb` — Virtual framebuffer (provides a fake display for Chromium)
+- `Xvfb` — Virtual framebuffer (provides a fake display for Chromium, default resolution: 1200x720x24)
 - `Chromium` — Browser engine
 - `Puppeteer` (Node.js) — Controls Chromium programmatically
 
@@ -60,6 +60,7 @@ All parameters can be customized. Defaults are provided.
 | `output` | stdout | Output file path |
 | `use_brave` | `false` | Enable Brave Search fallback |
 | `use_browser` | `false` | Enable browser scraping for blocked sites |
+| `no_reviews` | `false` | Disable review aggregation (reviews ON by default) |
 | `language` | auto | Output language (auto = follow query language) |
 
 ## Output Formats
