@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="README_zh.md">中文</a> ·
   <a href="#español">Español</a> ·
   <a href="README_ru.md">Русский</a> ·
@@ -45,7 +45,7 @@ Una habilidad de OpenClaw que agrega noticias de viajes, información de destino
 pip install requests fpdf2 python-docx
 ```
 
-Configure las claves API en `~/.openclaw/.env`:
+Configure las claves API en `.env (in skill directory)`:
 
 ```bash
 TAVILY_API_KEY=su_clave_tavily
@@ -111,7 +111,7 @@ MIT
 ---
 
 <p align="center">
-  <a href="README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="README_zh.md">中文</a> ·
   <a href="#español">↑ Volver arriba</a> ·
   <a href="README_ru.md">Русский</a> ·

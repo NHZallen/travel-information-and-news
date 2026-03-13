@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="#中文">中文</a> ·
   <a href="README_es.md">Español</a> ·
   <a href="README_ru.md">Русский</a> ·
@@ -49,7 +49,7 @@ pip install requests fpdf2 python-docx
 
 #### 2. 設定 API 金鑰
 
-建立或編輯 `~/.openclaw/.env`：
+建立或編輯 `.env (in skill directory)`：
 
 ```bash
 TAVILY_API_KEY=你的_Tavily_金鑰
@@ -138,7 +138,7 @@ MIT
 ---
 
 <p align="center">
-  <a href="README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="#中文">↑ 回到頂部</a> ·
   <a href="README_es.md">Español</a> ·
   <a href="README_ru.md">Русский</a> ·

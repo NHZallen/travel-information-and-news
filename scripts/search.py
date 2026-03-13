@@ -17,8 +17,8 @@ from datetime import datetime
 # Load .env if available
 def load_env():
     env_paths = [
-        os.path.expanduser("~/.openclaw/.env"),
         os.path.join(os.path.dirname(__file__), "..", ".env"),
+        ".env",
     ]
     for path in env_paths:
         if os.path.exists(path):
@@ -355,9 +355,19 @@ def main():
     if args.max_results > 0:
         results = results[:args.max_results]
 
+    # Output with language metadata
+    output_data = {
+        "query": args.query,
+        "detected_language": lang,
+        "result_count": len(results),
+        "results": results,
+    }
+
     # Output
     if args.format == "text":
         output = format_text(results, args.query)
+        # Add language reminder for agent
+        output = f"[LANGUAGE: {lang}] — Agent must translate all results to this language\n\n" + output
         if args.output:
             with open(args.output, "w", encoding="utf-8") as f:
                 f.write(output)
@@ -367,9 +377,11 @@ def main():
     elif args.format == "docx":
         output_path = args.output or "travel_report.docx"
         format_docx(results, args.query, output_path)
+        print(f"[LANGUAGE: {lang}] — Agent must translate all results to this language", file=sys.stderr)
     elif args.format == "pdf":
         output_path = args.output or "travel_report.pdf"
         format_pdf(results, args.query, output_path)
+        print(f"[LANGUAGE: {lang}] — Agent must translate all results to this language", file=sys.stderr)
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="README_zh.md">中文</a> ·
   <a href="README_es.md">Español</a> ·
   <a href="#русский">Русский</a> ·
@@ -45,7 +45,7 @@
 pip install requests fpdf2 python-docx
 ```
 
-Настройте API-ключи в `~/.openclaw/.env`:
+Настройте API-ключи в `.env (in skill directory)`:
 
 ```bash
 TAVILY_API_KEY=ваш_ключ_tavily
@@ -111,7 +111,7 @@ MIT
 ---
 
 <p align="center">
-  <a href="README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="README_zh.md">中文</a> ·
   <a href="README_es.md">Español</a> ·
   <a href="#русский">↑ Наверх</a> ·

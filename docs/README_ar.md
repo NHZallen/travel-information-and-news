@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="README_zh.md">中文</a> ·
   <a href="README_es.md">Español</a> ·
   <a href="README_ru.md">Русский</a> ·
@@ -45,7 +45,7 @@
 pip install requests fpdf2 python-docx
 ```
 
-قم بإعداد مفاتيح API في `~/.openclaw/.env`:
+قم بإعداد مفاتيح API في `.env (in skill directory)`:
 
 ```bash
 TAVILY_API_KEY=مفتاح_Tavily_الخاص_بك
@@ -111,7 +111,7 @@ MIT
 ---
 
 <p align="center">
-  <a href="README.md">English</a> ·
+  <a href="../README.md">English</a> ·
   <a href="README_zh.md">中文</a> ·
   <a href="README_es.md">Español</a> ·
   <a href="README_ru.md">Русский</a> ·

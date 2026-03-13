@@ -6,10 +6,10 @@
 
 <p align="center">
   <a href="#english">English</a> ·
-  <a href="README_zh.md">中文</a> ·
-  <a href="README_es.md">Español</a> ·
-  <a href="README_ru.md">Русский</a> ·
-  <a href="README_ar.md">العربية</a>
+  <a href="docs/README_zh.md">中文</a> ·
+  <a href="docs/README_es.md">Español</a> ·
+  <a href="docs/README_ru.md">Русский</a> ·
+  <a href="docs/README_ar.md">العربية</a>
 </p>
 
 ---
@@ -18,6 +18,10 @@
 ## 🇬🇧 English
 
 An OpenClaw skill that aggregates travel news, destination information, and reviews from multiple sources.
+
+## Who Is This For?
+
+Travel planning professionals, travel agents, tour operators, and travel content creators who need fast, comprehensive travel information from multiple sources.
 
 ### Features
 
@@ -49,7 +53,7 @@ pip install requests fpdf2 python-docx
 
 #### 2. Set up API keys
 
-Create or edit `~/.openclaw/.env`:
+Create or edit `.env (in skill directory)`:
 
 ```bash
 TAVILY_API_KEY=your_tavily_key_here
@@ -72,6 +76,14 @@ apt-get install -y xvfb chromium
 # Install Puppeteer
 npm install puppeteer
 ```
+
+**For advanced interactions** (simulated clicking, paginating results, clicking "load more" buttons), the `desktop-control` skill is required. It provides mouse/keyboard control and screen automation on the virtual display.
+
+Install it from ClawHub:
+```bash
+npx clawhub install desktop-control
+```
+Learn more: https://clawhub.com/skills/desktop-control
 
 ### Usage
 
@@ -187,8 +199,8 @@ MIT
 
 <p align="center">
   <a href="#english">↑ Back to top</a> ·
-  <a href="README_zh.md">中文</a> ·
-  <a href="README_es.md">Español</a> ·
-  <a href="README_ru.md">Русский</a> ·
-  <a href="README_ar.md">العربية</a>
+  <a href="docs/README_zh.md">中文</a> ·
+  <a href="docs/README_es.md">Español</a> ·
+  <a href="docs/README_ru.md">Русский</a> ·
+  <a href="docs/README_ar.md">العربية</a>
 </p>

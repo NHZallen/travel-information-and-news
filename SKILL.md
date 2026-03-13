@@ -1,11 +1,14 @@
 ---
 name: travel-information-and-news
-description: Search and aggregate travel news, information, and reviews from multiple sources. Use when user asks about travel destinations, tourism news, hotel/attraction reviews, travel tips, or anything travel-related. Supports Tavily (required), Brave Search (optional), and browser-based scraping (optional) for sites like Xiaohongshu and X/Twitter.
+description: Search and aggregate travel news, information, and reviews from multiple sources. Designed for travel planning professionals, travel agents, tour operators, and travel content creators. Use when user asks about travel destinations, tourism news, hotel/attraction reviews, travel tips, visa/policy updates, or anything travel-related. Supports Tavily (required), Brave Search (optional), and browser-based scraping (optional) for sites like Xiaohongshu and X/Twitter.
+target_audience: Travel planning professionals
 ---
 
 # Travel Information and News
 
 Aggregates travel news, destination info, and reviews from multiple sources.
+
+**⚠️ CRITICAL RULE: Output language MUST match the user's query language.** If the user writes in Chinese, ALL output (titles, content, summaries) must be in Chinese. If in Japanese, output in Japanese. Never return raw English results when the query is in another language.
 
 ## Quick Start
 
@@ -31,11 +34,16 @@ python scripts/search.py --query "Bali hotel reviews" --format docx --output res
 **Brave Search:** Set `BRAVE_API_KEY` env var.
 
 **Browser suite (三件套):** Requires three components working together:
-- `Xvfb` — Virtual framebuffer (provides a fake display for Chromium, default resolution: 1200x720x24)
+- `Xvfb` — Virtual framebuffer (provides a fake display for Chromium, default: 1200x720x24)
 - `Chromium` — Browser engine
 - `Puppeteer` (Node.js) — Controls Chromium programmatically
 
 Why not headless mode? Some websites block headless browsers. Running Chromium on a virtual display (Xvfb) makes it appear as a real browser, bypassing most detection.
+
+**Note:** For advanced interactions requiring simulated clicking (e.g., navigating paginated results, clicking "load more" buttons), install the `desktop-control` skill from ClawHub:
+```bash
+npx clawhub install desktop-control
+```
 
 Installation:
 ```bash
@@ -78,13 +86,14 @@ When reviews are requested, the skill attempts to aggregate ratings from:
 ## Workflow
 
 1. Receive user query
-2. Determine language from query
+2. **Detect query language** — output MUST match this language unless user specifies otherwise
 3. Search Tavily with query + parameters
 4. If results insufficient → optionally try Brave Search
 5. If specific sites blocked → optionally use browser suite
 6. If reviews requested → aggregate ratings
 7. Compile and deduplicate results
-8. Format output (text / docx / pdf)
+8. **Translate all results to detected/specified language** (critical: query language ≠ result language)
+9. Format output (text / docx / pdf)
 
 ## Limits
 
